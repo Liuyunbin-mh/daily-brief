@@ -1,0 +1,13 @@
+[Unit]
+Description=Daily brief (one-shot)
+Documentation=file://%h/ws/project/daily-brief/README.md
+
+[Service]
+Type=oneshot
+ExecStart=/home/lucas/miniconda3/bin/python3 -m daily_brief
+Environment=PYTHONPATH=%h/ws/project/daily-brief
+WorkingDirectory=%h
+Nice=10
+CPUQuota=20%
+MemoryMax=128M
+TimeoutStartSec=180

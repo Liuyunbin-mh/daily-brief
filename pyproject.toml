@@ -1,0 +1,19 @@
+[project]
+name = "daily-brief"
+version = "0.1.0"
+description = "One-shot daily brief for machine status, weather, and arXiv."
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+license-files = ["LICENSE"]
+dependencies = []
+
+[project.scripts]
+daily-brief = "daily_brief.__main__:main"
+
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["daily_brief*"]

@@ -1,0 +1,56 @@
+# Copy this file to ~/.config/daily-brief/config.toml and edit it there.
+# The repository copy keeps placeholder addresses so it can be published.
+
+[location]
+city = "Beijing"
+timezone = "auto"
+# latitude and longitude are written back after the first geocoding lookup.
+
+[arxiv]
+# At most 3 queries. Change these to your own topic. Metadata only, no PDFs.
+# Example: ["all:hidden markov model AND all:speech"]
+queries = ["cat:cs.LG"]
+max_results = 5
+
+[delivery]
+channel = "feishu"
+
+[feishu]
+# Empty means ~/.config/daily-brief/feishu-webhook and feishu-sign.
+webhook_file = ""
+sign_file = ""
+
+[deepseek]
+enabled = true
+model = "deepseek-flash"
+# Empty means ~/.config/daily-brief/deepseek-key
+key_file = ""
+max_tokens_per_paper = 120
+# Deep-read questions. "筛选时的推荐理由" is filled from the screener, not written again by the model.
+questions = [
+  "要解决的问题",
+  "点名的已有不足",
+  "核心做法",
+  "关键假设",
+  "主要结果（保留数字）",
+  "比较对象",
+  "作者承认的限制",
+  "和本次检索方向的关系",
+  "筛选时的推荐理由",
+  "正文仍未说清的点",
+]
+# Introductions kept for papers that may appear again. The seen-id list is separate and longer.
+summary_keep = 30
+
+[email]
+smtp_host = "smtp.example.com"
+smtp_port = 465
+username = "you@example.com"
+from_addr = "you@example.com"
+to = ["you@example.com"]
+# Empty means ~/.config/daily-brief/secret
+secret_file = ""
+
+[paths]
+# report_dir = ""
+# state_path = ""
